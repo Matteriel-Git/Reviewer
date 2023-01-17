@@ -1,4 +1,3 @@
-// local reviews data
 const reviews = [
   {
     id: 1,
@@ -38,7 +37,6 @@ const reviews = [
   },
 ];
 
-// select items
 const img = document.getElementById('person-img');
 const author = document.getElementById('author');
 const job = document.getElementById('job');
@@ -55,8 +53,6 @@ window.addEventListener('DOMContentLoaded', function(){
   showPerson(currentItem);
 });
 
-// show person based on item
-
 function showPerson(person) {
   const item = reviews[person];
    img.src = item.img;
@@ -64,8 +60,6 @@ function showPerson(person) {
   job.textContent = item.job;
   infor.textContent = item.text;
 };
-
-// show next person
 
 nextBtn.addEventListener('click', function(){
   currentItem++;
@@ -75,7 +69,6 @@ nextBtn.addEventListener('click', function(){
   showPerson(currentItem);
 });
 
-// show prev person
 prevBtn.addEventListener('click', function(){
   currentItem--;
   if (currentItem < 0){
@@ -83,8 +76,6 @@ prevBtn.addEventListener('click', function(){
   }
   showPerson(currentItem);
 });
-
-// show random person
 
 randomBtn.addEventListener('click', function () {
   currentItem = Math.floor(Math.random() * reviews.length);
